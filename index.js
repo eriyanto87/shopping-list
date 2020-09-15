@@ -1,3 +1,4 @@
+//add shopping item
 function addItems() {
   $("#js-shopping-list-form").submit(function (e) {
     e.preventDefault();
@@ -5,17 +6,18 @@ function addItems() {
         `<li> <span class="shopping-item"> ${$("#shopping-list-entry").val()} </span> <div class="shopping-item-controls"><button class="shopping-item-toggle"><span class="button-label">check</span></button><button class="shopping-item-delete"><span class="button-label">delete</span></button></div> </li>`
     );
     deleteItems();
-    checkedItems();
+    checkAndUncheckItems();
   });
 }
 
+//delete shopping item
 function deleteItems() {
         $('.shopping-item-delete').on('click', function() {
           this.closest('li').remove();
         });
     }
-
-function checkedItems() {
+//check and uncheck items
+function checkAndUncheckItems() {
     $('.shopping-item-toggle').on('click', function () {
         $(this)
           .closest('li')
@@ -27,4 +29,4 @@ function checkedItems() {
 
 addItems();
 deleteItems();
-checkedItems();
+checkeAndUncheckItems();
